@@ -7,3 +7,5 @@ merged with a monster image to create the final monster
 configuration.
 
 Run program with no parameters to see usage/parameters.
+
+As of writing (Sept 2018), Windows only.  
