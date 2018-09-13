@@ -90,7 +90,7 @@ int SaveMonsterTypeImage(const wchar_t *filename, HBITMAP hbm, const LONG imgSiz
 		assert(wszLastPath);
 		if (wszLastPath)
 		{
-			wszLastPath[0] = '\0';
+			*wszLastPath = '\0';
 			if (!PathIsDirectoryW(pathname))
 			{
 				if (!CreateDirectoryW(pathname, NULL))
@@ -99,7 +99,7 @@ int SaveMonsterTypeImage(const wchar_t *filename, HBITMAP hbm, const LONG imgSiz
 					return 17;
 				}
 			}
-			wszLastPath[0] = '\\';
+			*wszLastPath = '\\';
 		}
 	}
 	else
