@@ -11,7 +11,6 @@ const COLORREF color_white		= RGB(255, 255, 255);
 const COLORREF color_elite		= RGB(237, 200, 27);
 const COLORREF color_normal		= RGB(248, 248, 248);
 const COLORREF color_none		= RGB(0, 0, 0);
-//const COLORREF color_mask		= color_white;
 const COLORREF color_mask		= RGB(0, 128, 128);
 
 typedef enum MONSTER_ORIENTATION {
@@ -37,7 +36,7 @@ int OnUsage(const wchar_t *trigger = NULL)
 		wprintf(L"Confused by: %s\r\n", trigger);
 		ret = 1;
 	}
-	printf("Usage: genmonstertype [Type2] [Type3] [Type4] [orientation] [filename] [size]\r\n");
+	printf("Usage: ghmonstertype [Type2] [Type3] [Type4] [orientation] [filename] [size]\r\n");
 	printf("\tType#: [none|normal|elite]\r\n");
 	printf("\tOrientation: [vertical|horizontal]\r\n");
 	printf("\tSize is optional. Default is 500x500.\r\n");
@@ -159,7 +158,6 @@ int CreateMonsterTypeImage(const wchar_t *filename, const MonsterTypeData &mtd, 
 		{
 			CBmSelector bmSelNew(hdcNew, hbmNew);
 			CBmSelector bmSelMem(hdcMem, hbm);
-			//CBmSelector bmFinal(hdcFinal, hbmFinal);
 
 			hdcNew.FillWith(color_mask, imgSizeDst);
 			if (bmSelNew() && bmSelMem())
